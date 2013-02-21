@@ -1,0 +1,10 @@
+<header>
+    <h1>Ichabodcole.github.com</h1>
+    <p>Cole Reed on Github</p>
+    <p class="view"><a href="https://github.com/ichabodcole">View My GitHub Profile</a></p>
+    {% if page.home == true %}
+        <p class="view"><a href="blog.html">Read My Blog</a></p>
+    {% else %}
+        <p class="view"><a href="/index.html">Home</a></p>
+    {% endif %}
+</header>
