@@ -269,3 +269,7 @@ header .name, header a{
 header p{
   margin: 10px 0;
 }
+
+.post strong{
+  color: gray;
+}
