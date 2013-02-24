@@ -12,7 +12,7 @@ tags: learning
 
 There is a certain confidence that comes from learning a new thing, which no lack of natural talent can undermine. It tells you that even though you started at zero you have the ability to change.
 
-With that said, confidence in the skill of learning is hard to impart, it must be experienced. Over the next few posts I'd like to impart a few core principals which I believe are essential to being a successful learner. I hope they make your journey to a skilled learner a little easier.
+With that said, confidence in the skill of learning is hard to impart, it must be experienced. Over the next few posts I'd like to impart a few core principals which I believe are essential to being a successful learner. I hope they make your journey to becoming a skilled learner a little easier.
 
 * The right kind of attitude
 * Pragmatic practice
