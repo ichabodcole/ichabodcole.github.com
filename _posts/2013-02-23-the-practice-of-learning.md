@@ -22,4 +22,4 @@ With that said, confidence in the skill of learning is hard to impart, it must b
 
 ****
 
-Feel free to continue and add to this conversation with me over [email](mailto:ichabodcole@gmail.com)
+Feel free to continue and add to this conversation with me over email <ichabodcole@gmail.com>.
