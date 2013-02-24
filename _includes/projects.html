@@ -5,8 +5,9 @@
      <p>A Javascript/CoffeeScript library for generating binaural beats using the Web Audio API
      More on binaural beats <a href="http://en.wikipedia.org/wiki/Binaural_beats">Here</a></p>
 
-     <pre><code>context = new.webkitAudioContext()
+     <pre><code>context = new webkitAudioContext()
      bn1 = new BinauralBeat(context, frequency, beatRate)
+     bn1.setVolume(0.5)
      bn1Node = bn1.getNode()
      bn1Node.connect(context.destination)
      </code></pre>
@@ -15,8 +16,9 @@
 
      <p>A Javascript/CoffeeScript library for generating several types of ambient noise using the Web Audio API.</p>
 
-     <pre><code>context = new.webkitAudioContext()
-     ng1 = new NoiseGen(context, frequency, beatRate)
+     <pre><code>context = new webkitAudioContext()
+     ng1 = new NoiseGen(context, [type="brown", "white", "pink"])
+     ng1.setVolume(0.5)
      ng1Node = ng1.getNode()
      ng1Node.connect(context.destination)
      </code></pre>
