@@ -273,3 +273,7 @@ header p{
 .post strong{
   color: gray;
 }
+
+h4{
+  margin-bottom: .5em;
+}
