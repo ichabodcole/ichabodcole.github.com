@@ -2,16 +2,17 @@
     <h1>Ichabodcole.github.com</h1>
     <p class="name">Cole Reed on Github</p>
     <img src="http://gravatar.com/avatar/11f7e7bb9ba481ec38d1836fd7aa25e1?s=250" alt="photo of a pumpkin I carved for Halloween">
-    <p class="view"><a class="link" href="https://github.com/ichabodcole">View My GitHub Profile</a></p>
-    <p class="view"><a class="link" href="http://auralgrey.com">Visit My Website</a></p>
-    {% if page.home == true %}
-        <p class="view"><a href="blog.html">Read My Blog</a></p>
-    {% else %}
-        <p class="view"><a href="/index.html">Home</a></p>
-    {% endif %}
-    <p>Find me on</p>
-    <ul>
-        <li><a class="social twitter" href="https://twitter.com/ichabodcole">Twitter</a></li>
-        <li><a class="social linkedin" href="http://www.linkedin.com/in/colereed">Linkedin<a></li>
+    <ul class="site-links">
+        <li><a class="link" href="https://github.com/ichabodcole">View <em>My GitHub Profile</em></a></li>
+        <li><a class="link" href="http://auralgrey.com">Visit <em>My Website</em></a></li>
+        {% if page.home == true %}
+            <li><a href="blog.html">Read <em>My Blog</em></a></li>
+        {% else %}
+            <li><a href="/index.html">Home</a></li>
+        {% endif %}
+    </ul>
+    <ul class="links-social">
+        <li><a class="social twitter" href="https://twitter.com/ichabodcole"><img src="assets/images/twitter-icon.png" alt="twitter"></a></li>
+        <li><a class="social linkedin" href="http://www.linkedin.com/in/colereed"><img src="assets/images/linkedin-icon.png" alt="linkedin"></a><a></li>
     </ul>
 </header>
