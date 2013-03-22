@@ -5,6 +5,9 @@ tags: learning
 ---
 ### {{ page.title }}
 
+>“Practice does not make perfect. Only perfect practice makes perfect.”
+>― Vince Lombardi
+
 **Practice isn't just repetition.**
 We all know the old saying "Practice makes perfect", unfortunately that saying does not provide us with any insight on how to practice, or what the best type of practice involves.
 

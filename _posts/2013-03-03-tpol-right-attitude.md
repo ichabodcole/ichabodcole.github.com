@@ -5,8 +5,8 @@ tags: learning
 ---
 ### {{ page.title }}
 
->“Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.”
->― Richard P. Feynman
+>“We can complain because rose bushes have thorns, or rejoice because thorn bushes have roses.”
+>― Abraham Lincoln
 
 **This may seem obvious, because it is, but to be an successful learner you will need to have the right attitude.** This is especially important if your pursuing something on your own without the support of a formalized class or group of other learns to help you get through the tough spots.
 
