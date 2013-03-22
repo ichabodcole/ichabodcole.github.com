@@ -1,0 +1,65 @@
+/*My Styles*/
+h1{
+  color: black;
+  color: rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px rgba(107, 180, 246, 0.3);
+}
+
+header .name, header a{
+  font-size: 1.3em;
+}
+
+header p{
+  margin: 10px 0;
+}
+
+.post strong{
+  color: gray;
+}
+
+h4{
+  margin-bottom: .5em;
+}
+
+header li{
+  list-style: none;
+}
+
+.site-links{
+  font-size: 1em;
+  font-weight: bold;
+  margin-top:10px;
+  padding: 0;
+  line-height: 1.7;
+}
+
+.site-links a{
+  color: gray;
+}
+
+.site-links a em{
+  color: #339cd3;
+  font-style: normal;
+}
+
+.site-links li:before{
+  content: "\2605";
+  padding-right: 10px;
+  color: #f39b3a;
+}
+
+.links-social{
+  padding: 0;
+}
+
+.links-social li{
+  display: inline;
+}
+
+.twitter{
+    background: url("assets/images/twitter-icon.png");
+}
+
+.linkedin{
+    background: url("assets/images/linkedin-icon.png");
+}
