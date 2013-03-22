@@ -1,0 +1,5 @@
+<h4>My Latest Talk</h4>
+{% unless site.posts.category == "lightening_talks" %}
+<p><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a><p>
+{% endunless %}
+
