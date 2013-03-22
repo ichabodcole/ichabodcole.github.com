@@ -8,9 +8,10 @@ title: Cole Reed on Github
 
 <p>Currently attending <a href="http://www.portlandcodeschool.com/">Portland Code School</a></p>
 <hr>
-    <h4>My Latest Post</h4>
-        {% assign post = site.posts.first %}
-        <p><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a><p>
+    {% include latest_post.html %}
+
+<!-- TODO: Add links to lightning talks.  -->
+<!-- <hr>
+    {% include recent_talk.html %} -->
 <hr>
 {% include projects.html %}
-
