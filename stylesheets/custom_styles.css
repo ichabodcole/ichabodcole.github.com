@@ -5,6 +5,14 @@ h1{
   text-shadow: 0 1px rgba(107, 180, 246, 0.3);
 }
 
+h3{
+  font-size: 1.4em;
+}
+
+h4{
+  font-size: 1.3em;
+}
+
 header .name, header a{
   font-size: 1.3em;
 }
