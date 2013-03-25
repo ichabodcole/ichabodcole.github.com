@@ -3,15 +3,25 @@ layout: home
 home: true
 title: Cole Reed on Github
 ---
+<section class="title">
+  <h3>Creative Coder / Designer.</h3>
+  <p>Currently attending <a href="http://www.portlandcodeschool.com/">Portland Code School</a></p>
+  <hr>
+</section>
 
-<h3>Designer / Creative Coder.</h3>
-
-<p>Currently attending <a href="http://www.portlandcodeschool.com/">Portland Code School</a></p>
-<hr>
-    {% include latest_post.html %}
-
+<section class="latest-post">
+  {% include latest_post.html %}
+  <hr>
+</section>
 <!-- TODO: Add links to lightning talks.  -->
 <!-- <hr>
     {% include recent_talk.html %} -->
-<hr>
-{% include projects.html %}
+
+<section class="projects">
+  {% include projects.html %}
+  <!-- <hr> -->
+</section>
+
+<!-- <section class="about">
+  {% include about.html %}
+</section> -->

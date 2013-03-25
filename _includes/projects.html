@@ -1,25 +1,23 @@
-<div id="projects">
-     <h4>A Few Things I'm Working On</h4>
-     <h3><a href="https://github.com/ichabodcole/BinauralJS">BinauralJS</a></h3>
+<h4>A Few Things I'm Working On</h4>
+<h3><a href="https://github.com/ichabodcole/BinauralJS">BinauralJS</a></h3>
 
-     <p>A Javascript/CoffeeScript library for generating binaural beats using the Web Audio API. <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/ichabodcole/BinauralJS/blob/master/example/app.html" title="NoiseGenJS Demo">DEMO</a><br>
-     More on binaural beats <a target="_blank" href="http://en.wikipedia.org/wiki/Binaural_beats">Here</a></p>
+<p>A Javascript/CoffeeScript library for generating binaural beats using the Web Audio API. <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/ichabodcole/BinauralJS/blob/master/example/app.html" title="NoiseGenJS Demo">DEMO</a><br>
+More on binaural beats <a target="_blank" href="http://en.wikipedia.org/wiki/Binaural_beats">Here</a></p>
 
-     <pre><code>context = new webkitAudioContext()
-     bn1 = new BinauralBeat(context, frequency, beatRate)
-     bn1.setVolume(0.5)
-     bn1Node = bn1.getNode()
-     bn1Node.connect(context.destination)
-     </code></pre>
+<pre><code>context = new webkitAudioContext()
+bn1 = new BinauralBeat(context, frequency, beatRate)
+bn1.setVolume(0.5)
+bn1Node = bn1.getNode()
+bn1Node.connect(context.destination)
+</code></pre>
 
-     <h3><a href="https://github.com/ichabodcole/NoiseGenJS">NoiseGenJS</a></h3>
+<h3><a href="https://github.com/ichabodcole/NoiseGenJS">NoiseGenJS</a></h3>
 
-     <p>A Javascript/CoffeeScript library for generating several types of ambient noise using the Web Audio API. <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/ichabodcole/NoiseGenJS/blob/master/example/app.html" title="NoiseGenJS Demo">DEMO</a></p>
+<p>A Javascript/CoffeeScript library for generating several types of ambient noise using the Web Audio API. <a target="_blank" href="http://htmlpreview.github.com/?https://github.com/ichabodcole/NoiseGenJS/blob/master/example/app.html" title="NoiseGenJS Demo">DEMO</a></p>
 
-     <pre><code>context = new webkitAudioContext()
-     ng1 = new NoiseGen(context, [type="brown", "white", "pink"])
-     ng1.setVolume(0.5)
-     ng1Node = ng1.getNode()
-     ng1Node.connect(context.destination)
-     </code></pre>
- </div>
+<pre><code>context = new webkitAudioContext()
+ng1 = new NoiseGen(context, [type="brown", "white", "pink"])
+ng1.setVolume(0.5)
+ng1Node = ng1.getNode()
+ng1Node.connect(context.destination)
+</code></pre>
