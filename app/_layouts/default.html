@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width">
 
-        <!-- build:css({app,.tmp}) /css/main.css -->
-        <!-- Syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
+  <!-- build:css({app,.tmp}) /css/main.css -->
+  <!-- Syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css">
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-        <!-- endbuild -->
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/_bower_components/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="/_bower_components/normalize-css/normalize.css">
+  <!-- endbuild -->
 
-    </head>
-    <body>
+  <!-- Typekit code for Museo Sans -->
+  <script type="text/javascript" src="//use.typekit.net/zkb4pxf.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-        <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-            </div>
+</head>
+<body>
 
-                {{ content }}
+  <div class="container">
+    <div class="panel-left">
+      <a class="panel-button">Close</a>
+      <div class="panel-content">
+        <h1>Cole Reed</h1>
+        <div class="bio">
+          <p><img>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.</p>
+        </div>
+        <ul class="links">
+          <li><a>Resume</a></li>
+          <li><a>Portfolio</a></li>
+          <li><a>Code</a></li>
+        </ul>
+        <div class="contact">
+          <div><a>ichabodcole@gmail.com</a></div>
+          <div>Portland, Or</div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      {{ content }}
+    </div>
+    {% include footer.html %}
+  </div> <!-- /container -->
 
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  ichabodcole<br />
-                  <a href="mailto:ichabodcole@gmail.com">ichabodcole@gmail.com</a>
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/ichabodcole/">github.com/ichabodcole</a><br />
-                  <a href="http://twitter.com/ichabodcole/">twitter.com/ichabodcole</a><br />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div> <!-- /container -->
-
-    <!-- build:js(app) /js/scripts.js -->
-    <script src="/js/main.js"></script>
-    <!-- endbuild -->
-    </body>
+  <!-- build:js(app) /js/scripts.js -->
+  <script src="/js/main.js"></script>
+  <!-- endbuild -->
+</body>
 </html>

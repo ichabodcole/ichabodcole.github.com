@@ -1,0 +1,30 @@
+html {
+  font-size: 16px;
+  color: #555;
+}
+
+article {
+  text-align: left;
+
+  p{
+    padding: 0 2rem;
+  }
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  padding: 0 0;
+}
+
+li {
+  list-style: none;
+}
+
+@media (max-width:30em) {
+
+  html {
+    font-size: 14px;
+  }
+
+}
