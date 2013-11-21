@@ -1,4 +1,0 @@
-<h4>My Latest Post</h4>
-{% assign post = site.posts.first %}
-<p><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a><br>
-</p><div class="latest-post-snippet">{{ post.content | truncatewords: 50 }}</div>
