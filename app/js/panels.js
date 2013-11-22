@@ -17,19 +17,13 @@ var ichaBlog = (function(app){
 
   /**********************************
     **                            **
-     *      Utils Functions       *
+     *         Functions          *
     **                            **
    **********************************/
 
   function getPanelWidth(panel){
     return panel.offsetWidth + shadowWidth;
   }
-
-  /**********************************
-    **                            **
-     *         Functions          *
-    **                            **
-   **********************************/
 
   function openAboutPanel(){
     aboutPanel.style.transition = transitionTime + "s left";
@@ -59,7 +53,6 @@ var ichaBlog = (function(app){
   ***********************************/
 
   closeAboutPanel();
-  aboutPanel.style.transition = "0s left";
 
   return app;
 
