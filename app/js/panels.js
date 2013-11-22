@@ -5,8 +5,10 @@ var ichaBlog = (function(app){
      *         Variables          *
     **                            **
    **********************************/
+
   var shadowWidth = 10;
   var transitionTime = 0.6;
+  var panelOffsetRatio = 1;
   // DOM elements
   var closeAboutBtn = document.querySelector('#about-panel .panel-close-btn');
   var aboutPanel    = document.getElementById('about-panel');
@@ -14,6 +16,8 @@ var ichaBlog = (function(app){
   // Custom Events
   var closeClickEvent = new CustomEvent('closeClick', { bubbles: true });
   var openPanelEvent  = new CustomEvent('openPanel', { bubbles: true });
+
+  var mq = window.matchMedia('(max-width: 35em)');
 
   /**********************************
     **                            **
@@ -32,9 +36,17 @@ var ichaBlog = (function(app){
   }
 
   function closeAboutPanel(){
-    var panelWidth  = getPanelWidth(aboutPanel) * 1.5;
-    aboutPanel.style.left = (-panelWidth) + 'px';
+    var panelWidth  = getPanelWidth(aboutPanel);
+    aboutPanel.style.left = (-panelWidth * panelOffsetRatio) + 'px';
     document.dispatchEvent(closeClickEvent);
+  }
+
+  function onMatchMedia (mqe) {
+    if (mqe.matches) {
+      panelOffsetRatio = 1.5;
+    } else {
+      panelOffsetRatio = 1;
+    }
   }
 
   /**********************************
@@ -45,6 +57,7 @@ var ichaBlog = (function(app){
 
   closeAboutBtn.addEventListener('click', closeAboutPanel, false);
   aboutPanel.addEventListener('aboutClick', openAboutPanel, false);
+  mq.addListener(onMatchMedia);
 
   /**********************************
     **                            **
@@ -53,6 +66,7 @@ var ichaBlog = (function(app){
   ***********************************/
 
   closeAboutPanel();
+  onMatchMedia(mq);
 
   return app;
 

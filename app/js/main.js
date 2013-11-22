@@ -53,7 +53,7 @@ var ichaBlog = (function(app){
   // if we hit the media query stop remove the resize listener
   // and set the content margin to 0. If we leave the media query
   // adjust the header and add the resize listener back.
-  function widthChange(mq) {
+  function onMatchMedia(mq) {
     if (mq.matches) {
       removeHeaderMarginFromContent();
       window.removeEventListener('resize', windowResize);
@@ -80,7 +80,7 @@ var ichaBlog = (function(app){
   document.addEventListener('closeClick', unfreezeContent);
 
   // This fires when the media query is met or left.
-  mq.addListener(widthChange);
+  mq.addListener(onMatchMedia);
 
 
   /**********************************
@@ -91,7 +91,9 @@ var ichaBlog = (function(app){
 
   // Do an initial media query check to set up
   // the header and resize listener.
-  widthChange(mq);
+  onMatchMedia(mq);
+
+  return ichaBlog;
 
 })(ichaBlog || {});
 
