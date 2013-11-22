@@ -6,6 +6,7 @@ var ichaBlog = (function(app){
     **                            **
    **********************************/
   var shadowWidth = 10;
+  var transitionTime = 0.6;
   // DOM elements
   var closeAboutBtn = document.querySelector('#about-panel .panel-close-btn');
   var aboutPanel    = document.getElementById('about-panel');
@@ -31,13 +32,13 @@ var ichaBlog = (function(app){
    **********************************/
 
   function openAboutPanel(){
-    aboutPanel.style.transition = "0.5s left";
+    aboutPanel.style.transition = transitionTime + "s left";
     aboutPanel.style.left = '0';
     document.dispatchEvent(openPanelEvent);
   }
 
   function closeAboutPanel(){
-    var panelWidth  = getPanelWidth(aboutPanel);
+    var panelWidth  = getPanelWidth(aboutPanel) * 1.5;
     aboutPanel.style.left = (-panelWidth) + 'px';
     document.dispatchEvent(closeClickEvent);
   }
