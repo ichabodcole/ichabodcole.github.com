@@ -1,6 +1,7 @@
 @import 'colors';
 
-.panel-left {
+// General panel styles
+.panel {
   text-align: center;
   position: fixed;
   height: 100%;
@@ -8,8 +9,9 @@
   width: auto;
   z-index: 3;
   background: white;
-  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.25);
   padding: 0;
+  // transition: 0.5s left;
+  // visibility: hidden;
 
   .panel-button {
     font-weight: 500;
@@ -36,6 +38,17 @@
     overflow-y: scroll;
     // direction: rtl;
     padding: 0 4.5rem;
+
+
+  }
+}
+
+
+// Specific to the About panel.
+#about-panel {
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.25);
+
+  .panel-content {
 
     h1 {
       font-size: 3.5em;
