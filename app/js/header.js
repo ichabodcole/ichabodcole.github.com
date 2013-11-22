@@ -20,7 +20,6 @@ var ichaBlog = (function(app){
   // Custom Events
   var aboutClick = new CustomEvent('aboutClick', {bubbles: true});
   var moreClick  = new Event('moreClick');
-  console.log("bubbles?", aboutClick.bubbles);
 
   /**********************************
     **                            **

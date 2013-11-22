@@ -8,6 +8,18 @@ var ichaBlog = (function(app){
 
   // DOM Elements
   var container = document.querySelector('.container');
+  var article   = document.querySelector('article');
+  var header    = document.querySelector('header');
+
+  /**********************************
+    **                            **
+     *      Utils Functions       *
+    **                            **
+   **********************************/
+
+  function getHeaderHeight (){
+    return header.offsetHeight;
+  }
 
   /**********************************
     **                            **
@@ -25,6 +37,14 @@ var ichaBlog = (function(app){
     document.body.style.overflow = 'auto';
   }
 
+  function addHeaderMarginToContent() {
+    article.style.marginTop = getHeaderHeight() + "px";
+  }
+
+  function windowResize (e) {
+    addHeaderMarginToContent();
+  }
+
   /**********************************
     **                            **
      *      Events Listeners      *
@@ -33,8 +53,15 @@ var ichaBlog = (function(app){
 
   document.addEventListener('aboutClick', freezeContent);
   document.addEventListener('closeClick', unfreezeContent);
-  container.style.transition = "0.25s opacity";
+  window.addEventListener('resize', windowResize);
 
+  /**********************************
+    **                            **
+     *       On Load Events       *
+    **                            **
+  ***********************************/
+
+  addHeaderMarginToContent();
 
 })(ichaBlog || {});
 
