@@ -77,6 +77,7 @@ var ichaBlog = (function(app){
 
   // These listens to events dispatched from the about and close buttons
   document.addEventListener('aboutClick', freezeContent);
+  document.addEventListener('moreClick', freezeContent);
   document.addEventListener('closeClick', unfreezeContent);
 
   // This fires when the media query is met or left.

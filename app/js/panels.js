@@ -1,4 +1,4 @@
-var ichaBlog = (function(app){
+var ichaBlog = (function(app) {
 
   /**********************************
     **                            **
@@ -6,12 +6,14 @@ var ichaBlog = (function(app){
     **                            **
    **********************************/
 
-  var shadowWidth = 10;
+  var shadowWidth = 25;
   var transitionTime = 0.6;
   var panelOffsetRatio = 1;
   // DOM elements
   var closeAboutBtn = document.querySelector('#about-panel .panel-close-btn');
+  var closeMoreBtn  = document.querySelector('#more-panel .panel-close-btn');
   var aboutPanel    = document.getElementById('about-panel');
+  var morePanel     = document.getElementById('more-panel');
 
   // Custom Events
   var closeClickEvent = new CustomEvent('closeClick', { bubbles: true });
@@ -25,19 +27,31 @@ var ichaBlog = (function(app){
     **                            **
    **********************************/
 
-  function getPanelWidth(panel){
+  function getPanelWidth(panel) {
     return panel.offsetWidth + shadowWidth;
   }
 
-  function openAboutPanel(){
+  function openAboutPanel() {
     aboutPanel.style.transition = transitionTime + "s left";
     aboutPanel.style.left = '0';
     document.dispatchEvent(openPanelEvent);
   }
 
-  function closeAboutPanel(){
+  function openMorePanel() {
+    morePanel.style.transition = transitionTime + "s right";
+    morePanel.style.right = '0';
+    document.dispatchEvent(openPanelEvent);
+  }
+
+  function closeAboutPanel() {
     var panelWidth  = getPanelWidth(aboutPanel);
     aboutPanel.style.left = (-panelWidth * panelOffsetRatio) + 'px';
+    document.dispatchEvent(closeClickEvent);
+  }
+
+  function closeMorePanel() {
+    var panelWidth = getPanelWidth(morePanel);
+    morePanel.style.right = (-panelWidth * panelOffsetRatio) + 'px';
     document.dispatchEvent(closeClickEvent);
   }
 
@@ -56,7 +70,9 @@ var ichaBlog = (function(app){
    **********************************/
 
   closeAboutBtn.addEventListener('click', closeAboutPanel, false);
+  closeMoreBtn.addEventListener('click', closeMorePanel, false);
   aboutPanel.addEventListener('aboutClick', openAboutPanel, false);
+  morePanel.addEventListener('moreClick', openMorePanel, false);
   mq.addListener(onMatchMedia);
 
   /**********************************
@@ -65,8 +81,9 @@ var ichaBlog = (function(app){
     **                            **
   ***********************************/
 
-  closeAboutPanel();
   onMatchMedia(mq);
+  closeAboutPanel();
+  closeMorePanel();
 
   return app;
 

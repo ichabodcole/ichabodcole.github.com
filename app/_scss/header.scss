@@ -53,6 +53,12 @@ header {
         color: white;
         background: $middle-gray;
       }
+
+      .disabled:hover {
+        cursor: auto;
+        color: $dark-gray;
+        background:white;
+      }
     }
 
     .nav-right {
