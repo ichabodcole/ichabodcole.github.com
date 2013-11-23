@@ -10,8 +10,6 @@
   z-index: 3;
   background: white;
   padding: 0;
-  // transition: 0.5s left;
-  // visibility: hidden;
 
   .panel-button {
     font-weight: 500;
@@ -21,7 +19,6 @@
     padding: 1.5rem 0 1rem;
     display: block;
     cursor: pointer;
-    // border: $test-border;
     transition: 0.25s all;
     background: white;
   }
@@ -36,7 +33,6 @@
     height: 100%;
     max-height: 90%;
     overflow-y: auto;
-    // direction: rtl;
     padding: 0 4.5rem;
   }
 }
