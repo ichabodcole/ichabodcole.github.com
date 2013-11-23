@@ -1,6 +1,7 @@
 ---
 layout: post
-title: First week of Portland Code School - Lessons Learned
+title: First week of Portland Code School
+subtitle: Lessons Learned
 tags: portland_code_school
 ---
 

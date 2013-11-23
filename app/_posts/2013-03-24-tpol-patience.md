@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The Practice of Learning - Patience Beats Talent
+title: The Practice of Learning
+subtitle: Patience Beats Talent
 tags: learning
 ---
 ### {{ page.title }}

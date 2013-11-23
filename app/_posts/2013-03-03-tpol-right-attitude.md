@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The Practice of Learning - The Right Attitude
+title: The Practice of Learning
+subtitle: The Right Attitude
 tags: learning
 ---
 ### {{ page.title }}

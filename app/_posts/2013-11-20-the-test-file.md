@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "The Unbearable Lightness of Being"
-subtitle: "Chapter 1"
+title:  The Unbearable Lightness of Being
+subtitle: Chapter 1
 categories: jekyll update
 ---
 

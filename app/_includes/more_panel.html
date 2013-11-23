@@ -1,0 +1,18 @@
+<div id="more-panel" class="panel">
+  <a class="panel-button panel-close-btn">Close</a>
+  <div class="panel-content">
+  <!--   <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul> -->
+    <ul class="posts">
+    {% for post in site.posts %}
+      <li class="post">
+        <h2 class="title">{{post.title}}</h2>
+        <h3 class="subtitle">{{post.subtitle}}</h3>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>

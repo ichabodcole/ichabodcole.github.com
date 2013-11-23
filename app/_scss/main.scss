@@ -4,7 +4,7 @@
 /*
 /*****************************************************************************/
 
-// /* Global Reset */
+/* Global Reset */
 
 @import 'mixins';
 @import 'colors';
@@ -12,6 +12,8 @@
 @import 'header';
 @import 'footer';
 @import 'panels';
+@import 'about_panel';
+@import 'more_panel';
 
 *:after,
 *:before {

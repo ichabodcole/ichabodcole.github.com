@@ -1,6 +1,7 @@
 ---
 layout: post
-title: The Practice of Learning - Pragmatic Practice
+title: The Practice of Learning
+subtitle: Pragmatic Practice
 tags: learning
 ---
 ### {{ page.title }}
