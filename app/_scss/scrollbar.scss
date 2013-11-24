@@ -1,0 +1,47 @@
+@import 'colors';
+
+$scrollbar-fat: 20px;
+$scrollbar-skinny: 16px;
+$scrollbar-border-radius: 20px;
+
+::-webkit-scrollbar {
+  width: $scrollbar-fat;
+  height: $scrollbar-fat;
+  transition: 1s all;
+}
+
+// ::-webkit-scrollbar-button {
+//   background-color: white;
+// }
+
+::-webkit-scrollbar-track {
+  background-color: white;
+  // border-radius: $scrollbar-border-radius;
+}
+
+// ::-webkit-scrollbar-corner {
+//   background-color: white;
+// }
+
+// ::-webkit-scrollbar-resizer {
+//   box-shadow: none;
+// }
+
+::-webkit-scrollbar-track-piece{
+  background-color: $light-gray;
+  border-radius: $scrollbar-border-radius;
+  margin: 5px 5px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: white;
+  border: 2px solid $light-gray;
+  border-radius: $scrollbar-border-radius;
+}
+
+@media screen and (max-width: 30em) {
+  ::-webkit-scrollbar {
+    width: $scrollbar-skinny;
+    height: $scrollbar-skinny;
+  }
+}
