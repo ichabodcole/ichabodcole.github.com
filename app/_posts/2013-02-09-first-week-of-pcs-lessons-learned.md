@@ -4,8 +4,7 @@ title: First week of Portland Code School
 subtitle: Lessons Learned
 tags: portland_code_school
 ---
-
-### {{ page.title}}
+{% include title_data.tmp %}
 
 `<ul id="random-thoughts">`
 

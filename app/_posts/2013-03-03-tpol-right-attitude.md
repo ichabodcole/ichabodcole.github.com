@@ -4,7 +4,7 @@ title: The Practice of Learning
 subtitle: The Right Attitude
 tags: learning
 ---
-### {{ page.title }}
+{% include title_data.tmp %}
 
 >“We can complain because rose bushes have thorns, or rejoice because thorn bushes have roses.”
 >― Abraham Lincoln

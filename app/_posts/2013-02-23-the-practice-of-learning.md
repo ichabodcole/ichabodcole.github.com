@@ -3,7 +3,7 @@ layout: post
 title: The Practice of Learning
 tags: learning
 ---
-### {{ page.title }}
+{% include title_data.tmp %}
 
 >“Live as if you were to die tomorrow. Learn as if you were to live forever.”
 >― Mahatma Gandhi

@@ -4,7 +4,7 @@ title: The Practice of Learning
 subtitle: Pragmatic Practice
 tags: learning
 ---
-### {{ page.title }}
+{% include title_data.tmp %}
 
 >“Practice does not make perfect. Only perfect practice makes perfect.”
 >― Vince Lombardi

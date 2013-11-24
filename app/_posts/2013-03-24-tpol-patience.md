@@ -4,7 +4,7 @@ title: The Practice of Learning
 subtitle: Patience Beats Talent
 tags: learning
 ---
-### {{ page.title }}
+{% include title_data.tmp %}
 
 >“Patience is bitter, but its fruit is sweet.”
 >― Aristotle

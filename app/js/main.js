@@ -68,6 +68,24 @@ var ichaBlog = (function(app){
     window.requestAnimationFrame(addHeaderMarginToContent);
   }
 
+  // Gets the title and subtitle from a template,
+  // then injects them into the header.
+  function injectTitleInfo () {
+    var title    = document.getElementById('page-title').innerText.trim();
+    var subtitle = document.getElementById('page-subtitle').innerText.trim();
+
+    var titleElement    = document.querySelector('header .post-title h1');
+    var subTitleElement = document.querySelector('header .post-title h2');
+
+    // If the subtitle is empty remove the html element.
+    if (subtitle === ""){
+      subTitleElement.parentNode.removeChild(subTitleElement);
+    } else {
+      subTitleElement.innerText = "~ " + subtitle + " ~";
+    }
+
+    titleElement.innerText = title;
+  }
 
   /**********************************
     **                            **
@@ -89,7 +107,8 @@ var ichaBlog = (function(app){
      *       On Load Events       *
     **                            **
   ***********************************/
-
+  // Inject the title and subtitle into the header.
+  injectTitleInfo();
   // Do an initial media query check to set up
   // the header and resize listener.
   onMatchMedia(mq);
