@@ -23,16 +23,24 @@ var ichaBlog = (function(app){
 
   // Content Background Freezing
   /**********************************/
+  //
+  function changeBodyOverflow (value){
+    // This setTimeout is necessary, do to a bug in Firefox.
+    // This was also a pain in the ass to debug!
+    setTimeout(function(){
+      document.body.style.overflow = value;
+    }, 25);
+  }
 
   // This gets called when an overlay panel opens
   function freezeContent () {
     container.style.opacity = "0.3";
-    document.body.style.overflow = 'hidden';
+    changeBodyOverflow('hidden');
   }
 
   function unfreezeContent () {
     container.style.opacity = "1";
-    document.body.style.overflow = 'auto';
+    changeBodyOverflow('auto');
   }
 
 
@@ -68,23 +76,47 @@ var ichaBlog = (function(app){
     window.requestAnimationFrame(addHeaderMarginToContent);
   }
 
+  // Possible? (ie may not be able to access script tags)
+  // polyfill for ie vs firefox text grabbing.
+  function getElementText(element){
+    if(element.innerText){
+      return element.innerText;
+    } else {
+      return element.textContent;
+    }
+  }
+
+  function setElementText(element, value){
+    if(element.innerText){
+      element.innerText = value;
+    } else {
+      element.textContent = value;
+    }
+  }
+
   // Gets the title and subtitle from a template,
   // then injects them into the header.
   function injectTitleInfo () {
-    var title    = document.getElementById('page-title').innerText.trim();
-    var subtitle = document.getElementById('page-subtitle').innerText.trim();
+
+    var titleTemplate    = document.getElementById('page-title');
+    var subtitleTemplate = document.getElementById('page-subtitle')
 
     var titleElement    = document.querySelector('header .post-title h1');
     var subTitleElement = document.querySelector('header .post-title h2');
+
+    var title    = getElementText(titleTemplate).trim();
+    var subtitle = getElementText(subtitleTemplate).trim();
+
+    console.log(titleTemplate.textContent);
 
     // If the subtitle is empty remove the html element.
     if (subtitle === ""){
       subTitleElement.parentNode.removeChild(subTitleElement);
     } else {
-      subTitleElement.innerText = "~ " + subtitle + " ~";
+      setElementText(subTitleElement, "~ " + subtitle + " ~");
     }
 
-    titleElement.innerText = title;
+    setElementText(titleElement, title);
   }
 
   /**********************************

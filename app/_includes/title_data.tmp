@@ -4,3 +4,9 @@
 <script type="text/template" id="page-subtitle">
   {{ page.subtitle }}
 </script>
+
+<script type="text/javascript">
+  var ichaBlo = ichaBlo || {};
+  ichaBlo.pageTitle = "{{page.title}}";
+  ichaBlo.pageSubtitle = "{{page.subtitle}}";
+</script>

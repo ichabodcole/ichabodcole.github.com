@@ -33,14 +33,14 @@ var ichaBlog = (function(app) {
 
   function openAboutPanel() {
     aboutPanel.style.transition = transitionTime + "s left";
-    aboutPanel.style.left = '0';
-    document.dispatchEvent(openPanelEvent);
+    aboutPanel.style.left = 0;
+    // document.dispatchEvent(openPanelEvent);
   }
 
   function openMorePanel() {
     morePanel.style.transition = transitionTime + "s right";
-    morePanel.style.right = '0';
-    document.dispatchEvent(openPanelEvent);
+    morePanel.style.right = 0;
+    // document.dispatchEvent(openPanelEvent);
   }
 
   function closeAboutPanel() {

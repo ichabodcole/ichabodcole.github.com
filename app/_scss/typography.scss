@@ -1,3 +1,5 @@
+@import 'colors';
+
 html {
   font-size: 16px;
   color: #555;
@@ -8,6 +10,16 @@ article {
 
   p{
     padding: 0 2rem;
+  }
+
+  a{
+    color:black;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  a:hover, a:visited {
+    color: $middle-gray;
   }
 }
 
