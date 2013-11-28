@@ -36,6 +36,5 @@ old_site
 
 # Ignore for Yeoman-Jekyll projects #
 app/_bower_components
-dist
 node_modules
 .tmp
