@@ -43,6 +43,11 @@ var ichaBlog = (function(app) {
     // document.dispatchEvent(openPanelEvent);
   }
 
+  function closePanels() {
+    closeAboutPanel();
+    closeMorePanel();
+  }
+
   function closeAboutPanel() {
     var panelWidth  = getPanelWidth(aboutPanel);
     aboutPanel.style.left = (-panelWidth * panelOffsetRatio) + 'px';
@@ -73,6 +78,7 @@ var ichaBlog = (function(app) {
   closeMoreBtn.addEventListener('click', closeMorePanel, false);
   aboutPanel.addEventListener('aboutClick', openAboutPanel, false);
   morePanel.addEventListener('moreClick', openMorePanel, false);
+  document.addEventListener('containerClick', closePanels, false);
   mq.addListener(onMatchMedia);
 
   /**********************************

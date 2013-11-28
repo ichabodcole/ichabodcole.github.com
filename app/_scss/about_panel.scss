@@ -6,6 +6,15 @@
 
   .panel-content {
 
+    a {
+      color: $dark-gray;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: $middle-gray;
+    }
+
     h1 {
       font-size: 3.5em;
       font-weight: 100;
@@ -50,7 +59,13 @@
         padding: 0.5rem 0;
 
         a {
+          color: $dark-gray;
+          text-decoration: none;
           cursor: pointer;
+        }
+
+        a:hover {
+          color: $middle-gray;
         }
       }
     }

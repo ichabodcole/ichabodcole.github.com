@@ -5,6 +5,15 @@ html {
   color: #555;
 }
 
+a {
+  color: $dark-gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $middle-gray;
+}
+
 article {
   text-align: left;
 

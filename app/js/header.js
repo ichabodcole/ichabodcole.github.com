@@ -37,8 +37,8 @@ var ichaBlog = (function(app){
 
   function disableButtons () {
     setNavButtonsHoverClass('disabled');
-    moreBtn.removeEventListener('click', onMoreClick);
-    aboutBtn.removeEventListener('click', onAboutClick);
+    moreBtn.removeEventListener('click', onMoreClick, false);
+    aboutBtn.removeEventListener('click', onAboutClick, false);
   }
 
   function enableButtons() {
@@ -49,12 +49,14 @@ var ichaBlog = (function(app){
 
   function onAboutClick (e) {
     e.preventDefault();
+    e.stopPropagation();
     aboutPanel.dispatchEvent(aboutClick);
     disableButtons();
   }
 
   function onMoreClick (e) {
     e.preventDefault();
+    e.stopPropagation();
     morePanel.dispatchEvent(moreClick);
     disableButtons();
   }

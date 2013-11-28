@@ -11,7 +11,9 @@ var ichaBlog = (function(app){
   var container = document.querySelector('.container');
   var article   = document.querySelector('article');
   var header    = document.querySelector('header');
-  //
+  // Custom Events
+  var containerClick = new CustomEvent('containerClick', {bubbles:true});
+  // matchMedia objects
   var mq = window.matchMedia('(max-width: 35em)');
 
 
@@ -24,9 +26,15 @@ var ichaBlog = (function(app){
   // Content Background Freezing
   /**********************************/
   //
+  function onContainerClick(){
+    document.dispatchEvent(containerClick);
+  }
+
   function changeBodyOverflow (value){
     // This setTimeout is necessary, do to a bug in Firefox.
     // This was also a pain in the ass to debug!
+    // Below is a link referencing the same problem on stackoverflow
+    // http://stackoverflow.com/questions/13626412/firefox-transitions-breaking-when-parent-overflow-is-changed
     setTimeout(function(){
       document.body.style.overflow = value;
     }, 25);
@@ -36,11 +44,13 @@ var ichaBlog = (function(app){
   function freezeContent () {
     container.style.opacity = "0.3";
     changeBodyOverflow('hidden');
+    container.addEventListener('click', onContainerClick, false);
   }
 
   function unfreezeContent () {
     container.style.opacity = "1";
     changeBodyOverflow('auto');
+    container.removeEventListener('click', onContainerClick, false);
   }
 
 
@@ -78,14 +88,6 @@ var ichaBlog = (function(app){
 
   // Possible? (ie may not be able to access script tags)
   // polyfill for ie vs firefox text grabbing.
-  function getElementText(element){
-    if(element.innerText){
-      return element.innerText;
-    } else {
-      return element.textContent;
-    }
-  }
-
   function setElementText(element, value){
     if(element.innerText){
       element.innerText = value;
@@ -98,16 +100,11 @@ var ichaBlog = (function(app){
   // then injects them into the header.
   function injectTitleInfo () {
 
-    var titleTemplate    = document.getElementById('page-title');
-    var subtitleTemplate = document.getElementById('page-subtitle')
-
     var titleElement    = document.querySelector('header .post-title h1');
     var subTitleElement = document.querySelector('header .post-title h2');
 
-    var title    = getElementText(titleTemplate).trim();
-    var subtitle = getElementText(subtitleTemplate).trim();
-
-    console.log(titleTemplate.textContent);
+    var title    = app.pageTitle;
+    var subtitle = app.pageSubtitle;
 
     // If the subtitle is empty remove the html element.
     if (subtitle === ""){
