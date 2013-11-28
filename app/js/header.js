@@ -30,7 +30,7 @@ var ichaBlog = (function(app){
    **********************************/
 
   function setNavButtonsHoverClass (classString) {
-    buttons.forEach(function(element, index, array){
+    buttons.forEach(function(element) {
       element.getElementsByTagName('span')[0].className = classString;
     });
   }
@@ -75,7 +75,7 @@ var ichaBlog = (function(app){
     **                            **
    **********************************/
 
-  enableButtons()
+  enableButtons();
   return app;
 
 })(ichaBlog || {});

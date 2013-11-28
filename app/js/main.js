@@ -42,13 +42,13 @@ var ichaBlog = (function(app){
 
   // This gets called when an overlay panel opens
   function freezeContent () {
-    container.style.opacity = "0.3";
+    container.style.opacity = 0.3;
     changeBodyOverflow('hidden');
     container.addEventListener('click', onContainerClick, false);
   }
 
   function unfreezeContent () {
-    container.style.opacity = "1";
+    container.style.opacity = 1;
     changeBodyOverflow('auto');
     container.removeEventListener('click', onContainerClick, false);
   }
@@ -61,11 +61,11 @@ var ichaBlog = (function(app){
   }
 
   function removeHeaderMarginFromContent() {
-    article.style.marginTop = headerOffset + "px";
+    article.style.marginTop = headerOffset + 'px';
   }
 
   function addHeaderMarginToContent() {
-    article.style.marginTop = getHeaderHeight() + headerOffset + "px";
+    article.style.marginTop = getHeaderHeight() + headerOffset + 'px';
   }
 
   // if we hit the media query stop remove the resize listener
@@ -107,10 +107,10 @@ var ichaBlog = (function(app){
     var subtitle = app.pageSubtitle;
 
     // If the subtitle is empty remove the html element.
-    if (subtitle === ""){
+    if (subtitle === ''){
       subTitleElement.parentNode.removeChild(subTitleElement);
     } else {
-      setElementText(subTitleElement, "~ " + subtitle + " ~");
+      setElementText(subTitleElement, '~ ' + subtitle + ' ~');
     }
 
     setElementText(titleElement, title);
