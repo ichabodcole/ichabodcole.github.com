@@ -13,7 +13,6 @@ var ichaBlog = (function(app){
    **********************************/
 
   var scroller   = app.scroller;
-  var lastScroll = 0;
   var viewState  = true;
   // Dom elments
   var header     = document.querySelector('header');
@@ -63,21 +62,6 @@ var ichaBlog = (function(app){
     e.stopPropagation();
     document.dispatchEvent(moreClick);
     disableButtons();
-  }
-
-  function getScrollDirection (fuzzyUp, fuzzyDown) {
-    var dir, newScroll;
-    fuzzyUp = fuzzyUp || 0;
-    fuzzyDown = fuzzyDown || fuzzyUp;
-    newScroll = document.body.scrollTop;
-
-    if(newScroll > (lastScroll + fuzzyDown)) {
-      dir = 'down';
-    } else if (newScroll < (lastScroll - fuzzyUp)){
-      dir = 'up';
-    }
-    lastScroll = newScroll;
-    return dir;
   }
 
   function getHeaderHeight (){
