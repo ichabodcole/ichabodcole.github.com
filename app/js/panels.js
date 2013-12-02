@@ -76,8 +76,8 @@ var ichaBlog = (function(app) {
 
   closeAboutBtn.addEventListener('click', closeAboutPanel, false);
   closeMoreBtn.addEventListener('click', closeMorePanel, false);
-  aboutPanel.addEventListener('aboutClick', openAboutPanel, false);
-  morePanel.addEventListener('moreClick', openMorePanel, false);
+  document.addEventListener('aboutClick', openAboutPanel, false);
+  document.addEventListener('moreClick', openMorePanel, false);
   document.addEventListener('containerClick', closePanels, false);
   mq.addListener(onMatchMedia);
 
