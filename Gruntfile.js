@@ -16,11 +16,24 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     // Configurable paths
+    mocha: {
+      test: {
+        src: ['tests/index.html'],
+        options: {
+          reporter: 'Nyan',
+          run: true
+        }
+      }
+    },
     yeoman: {
       app: 'app',
       dist: 'dist'
     },
     watch: {
+      test: {
+        files: ['tests/index.html', 'tests/**/*.js'],
+        tasks: ['mocha:test']
+      },
       compass: {
         files: ['<%= yeoman.app %>/_scss/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer:server']
@@ -77,10 +90,7 @@ module.exports = function (grunt) {
       test: {
         options: {
           base: [
-            '.tmp',
-            '.jekyll',
-            'test',
-            '<%= yeoman.app %>'
+            './'
           ]
         }
       }
@@ -364,6 +374,8 @@ module.exports = function (grunt) {
 
   // No real tests yet. Add your own.
   grunt.registerTask('test', [
+    'connect:test',
+    'watch:test'
   //   'clean:server',
   //   'concurrent:test',
   //   'connect:test'
