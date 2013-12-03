@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mocha Test Runner</title>
+  <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+  <script type="text/javascript" src="../node_modules/mocha/mocha.js"></script>
+  <script type="text/javascript" src="../node_modules/chai/chai.js"></script>
+  <script type="text/javascript" src="../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+</head>
+<body>
+<div id="mocha"></div>
+<script type="text/javascript">
+  mocha.setup('bdd');
+</script>
+<!-- INCLUDE SCRIPTS -->
+<script type="text/javascript" src="../app/js/scrollemetry.js"></script>
+
+<!-- INCLUDE SPECS -->
+<script type="text/javascript" src="specs/spec_scrollemetry.js"></script>
+
+<script type="text/javascript">
+  var expect = chai.expect;
+</script>
+
+<script type="text/javascript">
+  if(navigator.userAgent.indexOf('Phantomjs') < 0){
+    mocha.run();
+  }
+</script>
+</body>
+</html>
