@@ -12,7 +12,7 @@ var ichaBlog = (function(app){
     **                            **
    **********************************/
 
-  var scroller   = app.scroller;
+  var scroller   = new Scrollemetry(document);
   var viewState  = true;
   // Dom elments
   var header     = document.querySelector('header');
@@ -79,36 +79,36 @@ var ichaBlog = (function(app){
   }
 
   // Scroll checking functions
-  function isBelowOffset (scroller, offset) {
-    if (scroller.scroll > offset) {
+  function isBelowOffset (scroll, offset) {
+    if (scroll > offset) {
       return true;
     }
     return false;
   }
 
-  function isDownAndBelowOffset (scroller, offset){
-    if (scroller.direction === 'down' && isBelowOffset(scroller, offset)) {
+  function isDownAndBelowOffset (scrollDir, scroll, offset){
+    if (scrollDir === 'down' && isBelowOffset(scroll, offset)) {
       return true;
     }
     return false;
   }
 
-  function isDownAndAboveSpeed(scroller, speed) {
-    if (scroller.direction === 'down' && Math.abs(scroller.speed) > speed) {
+  function isDownAndAboveSpeed(scrollDir, scrollSpeed, speed) {
+    if (scrollDir === 'down' && Math.abs(scrollSpeed) > speed) {
       return true;
     }
     return false;
   }
 
-  function isUpAndAboveOffset(scroller, offset) {
-    if (scroller.direction === 'up' && !isBelowOffset(scroller, offset)) {
+  function isUpAndAboveOffset(scrollDir, scroll, offset) {
+    if (scrollDir === 'up' && !isBelowOffset(scroll, offset)) {
       return true;
     }
     return false;
   }
 
-  function isUpAndAboveSpeed (scroller, speed) {
-    if (scroller.direction === 'up' && Math.abs(scroller.speed) > speed) {
+  function isUpAndAboveSpeed (scrollDir, scrollSpeed, speed) {
+    if (scrollDir === 'up' && Math.abs(scrollSpeed) > speed) {
       return true;
     }
     return false;
@@ -116,21 +116,24 @@ var ichaBlog = (function(app){
 
   function onScroll (e) {
     window.requestAnimationFrame(function(){
-      scroller.update();
-      headerOffset = getHeaderHeight() - (getHeaderHeight() * 0.2);
+      var scroll = scroller.scroll(),
+          scrollSpeed = scroller.speed(),
+          scrollDirection = scroller.direction(),
+          headerOffset = getHeaderHeight() - (getHeaderHeight() * 0.2);
 
-      if(isDownAndBelowOffset(scroller, headerOffset) && viewState === true) {
+      scroller.update(document.body.scrollTop);
+
+      if(isDownAndBelowOffset(scrollDirection, scroll, headerOffset) && viewState === true) {
         hideHeader();
       }
 
-      if(isUpAndAboveOffset(scroller, headerOffset) && viewState === false) {
+      if(isUpAndAboveOffset(scrollDirection, scroll, headerOffset) && viewState === false) {
         showHeader();
       }
 
-      if (isUpAndAboveSpeed(scroller, 15)
-        && isBelowOffset(scroller, headerOffset)
+      if (isUpAndAboveSpeed(scrollDirection, scrollSpeed, 15)
+        && isBelowOffset(scroll, headerOffset)
         && viewState === false) {
-
         showHeader();
       }
     });
