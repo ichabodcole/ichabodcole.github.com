@@ -1,5 +1,0 @@
-<script type="text/javascript">
-  var ichaBlog = ichaBlog || {};
-  ichaBlog.pageTitle = "{{page.title}}";
-  ichaBlog.pageSubtitle = "{{page.subtitle}}";
-</script>
