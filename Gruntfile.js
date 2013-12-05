@@ -256,6 +256,33 @@ module.exports = function (grunt) {
       }
     },
     copy: {
+      bower_components: {
+        files: [
+          // Font Awesome CSS
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/_bower_components/font-awesome/css',
+            src:'font-awesome.css',
+            dest:'<%= yeoman.app %>/css'
+          },
+          // Font Awesome Fonts
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/_bower_components/font-awesome/fonts',
+            src:'**',
+            dest:'<%= yeoman.app %>/fonts',
+            filter: 'isFile'
+          },
+          // Normalize
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/_bower_components/normalize-css',
+            src:'normalize.css',
+            dest:'<%= yeoman.app %>/css'
+          }
+        ]
+      },
+
       dist: {
         files: [{
           expand: true,
@@ -363,6 +390,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'mocha:test',
       'clean:server',
+      'copy:bower_components',
       'concurrent:server',
       'autoprefixer:server',
       'connect:livereload',
@@ -398,6 +426,7 @@ module.exports = function (grunt) {
     'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
+    'copy:bower_components',
     'concurrent:dist',
     'useminPrepare',
     'concat',
