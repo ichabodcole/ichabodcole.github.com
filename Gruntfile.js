@@ -20,7 +20,7 @@ module.exports = function (grunt) {
       test: {
         src: ['tests/index.html'],
         options: {
-          reporter: 'Nyan',
+          reporter: 'Spec',
           run: true
         }
       }
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     },
     watch: {
       test: {
-        files: ['tests/index.html', 'tests/**/*.js'],
+        files: ['tests/index.html', 'tests/**/*.js', '<%= yeoman.app %>/js/*.js'],
         tasks: ['mocha:test']
       },
       compass: {
@@ -89,6 +89,8 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
+          livereload: true,
+          open: 'http://127.0.0.1:9000/tests',
           base: [
             './'
           ]
@@ -359,6 +361,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'mocha:test',
       'clean:server',
       'concurrent:server',
       'autoprefixer:server',
@@ -391,6 +394,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'mocha:test',
     'clean:dist',
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
