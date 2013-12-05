@@ -27,7 +27,7 @@ var Scrollemetry = (function() {
   // END CUSTOMEVENT POLYFILL
 
   function Scrollemetry (el) {
-    this.el          = el;
+    this._el          = el;
     this._lastScroll = 0;
     this._direction  = null;
     this._speed      = 0;
@@ -42,7 +42,7 @@ var Scrollemetry = (function() {
     var _dispatchEvent = function (marker){
       // CustomEvent is a DOM method
       var e = new CustomEvent(marker.id, {detail:marker});
-      this.el.dispatchEvent(e);
+      this._el.dispatchEvent(e);
     }
 
     , _markerExists = function (id) {
