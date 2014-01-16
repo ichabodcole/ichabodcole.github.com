@@ -14,7 +14,7 @@ Below is a list of quotes I came up with in the process of writing a personal su
 
 ---
 
->Have humility to leap onto the shoulders of giants, and the acumen to jump off before hitting a tree branch.
+>Have the humility to leap onto the shoulders of giants, and the acumen to jump off before hitting a tree branch.
 
 >Don't tell me what you want, tell me why you want it.
 
